@@ -22,6 +22,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/post' element={<Post />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/blog' element={<Blog />} />
           </Routes>
         </ThirdwebProvider>
         <Footer />

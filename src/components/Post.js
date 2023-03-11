@@ -24,7 +24,7 @@ const Post = () => {
 
     const postBlog = async (e) => {
         try {
-            e.prevntDefault()
+            e.preventDefault()
             if (window.ethereum) {
                 const provider = new ethers.providers.Web3Provider(window.ethereum);
                 const signer = provider.getSigner();
@@ -37,8 +37,8 @@ const Post = () => {
                 const imageURI = await uploadToIpfs();
                 const postTx = await blogContract.post(
                     `${title}`,
-                    `${content}`
-                        `${imageURI}`
+                    `${content}`,
+                    `${imageURI}`
                 )
 
                 postTx.wait();

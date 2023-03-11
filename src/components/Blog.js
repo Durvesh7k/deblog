@@ -7,16 +7,16 @@ const Blog = () => {
     return (
         <div className="conatiner bg-gray-900 min-h-[70vh] mx-auto">
             <div className="flex pt-20 items-center justify-center mx-20">
-                <div className="w-3/6">
+                <div className="w-3/6 px-8 md:px-12">
                     <img
-                        src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        src={data.image}
                         alt="tailwind logo"
                         className="rounded-xl"
                     />
                 </div>
                 <div className="w-3/6">
                     <h2 className="text-xl text-white font-bold">{data.title}</h2>
-                    <p className='text-md text-gray-200 text-justify'>{data.description}</p>
+                    <p className='text-md text-gray-200 text-justify'>{data.content}</p>
                 </div>
 
             </div>
