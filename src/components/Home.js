@@ -1,24 +1,33 @@
 import React from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useStateContext } from '../context';
+import { Navbar } from './Navbar';
+import HeroHome from './HeroHome';
+import Card from './Card';
+import Footer from './Footer';
 
 
 
 const Home = () => {
-  const {address} =useStateContext();
+  const { address } = useStateContext();
   return (
-    <div className='bg-black h-screen text-white'>
-        <ConnectButton/>
-        <h1 className='text-lg font-bold'>Home</h1>
-        {address != null ? (
-            <span>Your are connected to: {address}</span>
-        ) : (
-            <span>Not connected</span>
-        )
+    <>
+      <HeroHome />
+      <div className="conatiner bg-gray-900 mx-auto">
+        <div className="flex flex-col items-center justify-center w-4/6 mx-auto min-h-80 ">
 
-    }
-      
-    </div>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+        </div>
+      </div>
+
+
+
+    </>
   )
 }
 
