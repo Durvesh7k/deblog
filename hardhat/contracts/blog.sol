@@ -5,7 +5,6 @@ pragma solidity ^0.8.17;
 
 contract blog {
     mapping(address=>string) accountName;
-    mapping(address=>string) profileImage;
 
     address public owner;
     uint256 public cost;
@@ -53,18 +52,15 @@ contract blog {
     
     
 
-    function setAccountName(string memory _name, string memory _imageURI) external payable{
+    function setAccountName(string memory _name) external payable{
         accountName[msg.sender] = _name;
-        profileImage[msg.sender] = _imageURI;
     }
 
     function getAccountName(address accounAddress) public view returns(string memory){
         return accountName[accounAddress];
     }
 
-    function getProfileImage(address accounAddress) public view returns(string memory){
-        return profileImage[accounAddress];
-    }
+  
 
 
 }
