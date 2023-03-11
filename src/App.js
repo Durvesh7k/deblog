@@ -10,7 +10,6 @@ import Blog from './components/Blog';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 
 
-
 const App = () => {
   return (
     <div>

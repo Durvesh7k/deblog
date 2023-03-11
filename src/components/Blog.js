@@ -5,9 +5,9 @@ const Blog = () => {
     const location = useLocation();
     const data = location.state?.data;
     return (
-        <div className="conatiner bg-gray-900 min-h-[70vh] mx-auto">
-            <div className="flex pt-20 items-center justify-center mx-20">
-                <div className="w-3/6 px-8 md:px-12">
+        <div className="conatiner bg-gray-900 min-h-[70vh] md:mx-auto">
+            <div className="flex mx-8 md:flex-row flex-col pt-20 items-center justify-center md:mx-20">
+                <div className="md:w-3/6 px-8 md:px-12">
                     <img
                         src={data.image}
                         alt="tailwind logo"
