@@ -15,8 +15,12 @@ const Blog = () => {
                     />
                 </div>
                 <div className="w-3/6">
-                    <h2 className="text-xl text-white font-bold">{data.title}</h2>
+                <h2 className="text-xl text-white font-bold mt-4 md:mt-0">{data.title}</h2>
+                    <p className="text-sm cursor-pointer font-medium my-1.5 text-sky-300">
+                        Author : <span>{data.owner}</span>
+                    </p>
                     <p className='text-md text-gray-200 text-justify'>{data.content}</p>
+                    <p className='text-md text-gray-200 text-italic text-justify mt-2'>Date{data.timestamp}</p>
                 </div>
 
             </div>

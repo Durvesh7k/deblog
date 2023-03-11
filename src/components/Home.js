@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useStateContext } from '../context';
+import Loading from './Loading';
 
 import contractAddress from '../contractsData/blog-address.json';
 import abi from '../contractsData/blog.json';
@@ -13,8 +13,7 @@ import Card from './Card';
 const Home = () => {
 
     const [postsArray, setPostsArray] = useState([]);
-
-    const { address } = useStateContext();
+    const[isLoading,setisLoading] = useState(false);
 
     useEffect(()=>{
         getPosts();
@@ -23,6 +22,7 @@ const Home = () => {
     const getPosts = async () => {
         try {
             if (window.ethereum) {
+                setisLoading(true);
                 const provider = new ethers.providers.Web3Provider(window.ethereum);
                 const signer = provider.getSigner();
                 const blogContract = new ethers.Contract(
@@ -45,6 +45,7 @@ const Home = () => {
                     })
                 ))
                 setPostsArray(blogsCleaned);
+                setisLoading(false)
             } else {
                 console.log("eth object not found");
             }
@@ -58,16 +59,23 @@ const Home = () => {
           <HeroHome />
           <div className="conatiner bg-gray-900 mx-auto">
               <div className="flex flex-col items-center justify-center w-4/6 mx-auto min-h-80 ">
-                {postsArray.length !== 0 ? (
-                    postsArray.map((blog)=>{
-                        return(
-                            <Card data={blog}/>
-                        )
-                    })
-                ):(
-                    <span>No blogs</span>
+                {!isLoading ? (
+                    postsArray.length !== 0 ? (
+                        postsArray.map((blog)=>{
+                            return(
+                                <Card data={blog}/>
+                            )
+                        })
+                    ):(
+                        <span>No blogs</span>
+                    )
+
+                ) : (
+                    <Loading text="wait for the blogs"/>
                 )
+            
             }
+             
               </div>
           </div>
       </>
