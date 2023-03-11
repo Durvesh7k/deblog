@@ -7,6 +7,7 @@ import { StateContextProvider } from './context'
 import { Navbar } from './components/Navbar';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
+import Loading from './components/Loading';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/post' element={<Post />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/blog' element={<Blog />} />
+          <Route path='/loading' element={<Loading/>}/>
         </Routes>
         <Footer/>
       </StateContextProvider>

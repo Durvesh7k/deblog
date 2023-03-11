@@ -4,15 +4,15 @@ import pimg from '../assets/profile.png'
 const Profile = () => {
   return (
     <div className="conatiner bg-gray-900 min-h-[70vh] mx-auto">
-      <div className="flex md:w-5/6 pt-20 ">
-        <div className="w-3/6 pl-16 flex items-center justify-center flex-col md:flex-row p-12">
+      <div className="flex flex-col md:flex-row px-8 md:w-5/6 pt-20 ">
+        <div className="md:w-3/6 md:pl-16 flex items-center justify-center  md:p-12">
           <img
             src={pimg}
             alt="tailwind logo"
-            className=""
+            className="mx-auto"
           />
         </div>
-        <div className="w-3/6 md:mt-12 flex flex-col justify-around">
+        <div className="md:w-3/6 md:mt-12 flex flex-col justify-around">
           <div className="flex-col">
 
           <h2 className="text-xl mt-3 text-white font-normal"><span className="font-bold">Account Id : </span> s54556a4s545s44s4</h2>

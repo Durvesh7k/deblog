@@ -14,7 +14,9 @@ const Card = ({data}) => {
                     />
                 </div>
                 <div className="w-full md:w-2/3 bg-slate-800 flex flex-col space-y-2 p-3">
-                    
+                <p className="text-sm cursor-pointer font-medium text-sky-300">
+                        Author : <span>{data.authorname}</span>
+                    </p>
                     <h3 className="font-black text-gray-100 md:text-3xl text-xl">
                         The Majestic and Wonderful Bahamas
                     </h3>

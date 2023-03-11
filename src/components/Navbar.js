@@ -82,8 +82,8 @@ export const Navbar = ({ account, onClickButton, handleLogout }) => {
                                     Posts
                                 </Link>
                                 <Link
-                                    to="/post"
-                                    activeClass="buyens"
+                                    to="/profile"
+                                    activeClass="profile"
 
                                     smooth={true}
                                     offset={50}
@@ -93,9 +93,7 @@ export const Navbar = ({ account, onClickButton, handleLogout }) => {
                                     Profile
                                 </Link>
                                 <Link
-                                    href="/contact"
-                                    activeClass="contact"
-                                    to="contact"
+                                   
                                     smooth={true}
                                     offset={50}
                                     duration={500}
