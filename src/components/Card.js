@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Card = () => {
+const Card = ({data}) => {
     return (
         <>
             {/* component */}
-            <Link to='/blog' className="relative mt-6 z-40 flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-slate-900 bg-slate-800">
+            <Link to='/blog' state={{ data: data }} className="relative mt-6 z-40 flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-slate-900 bg-slate-800">
                 <div className="w-full md:w-1/3 bg-gray-700 grid place-items-center">
                     <img
                         src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
